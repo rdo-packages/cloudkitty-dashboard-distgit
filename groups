@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-c500ad3aaa4b1ce4e572f324b129647dfbb68e21	openstack/cloudkitty-dashboard-distgit-ptl
+# UUID          Group Name
+False 	Non-Interactive Users
+866a206e921ab0a29a5cc0d2be152d061a77cffa       	openstack/cloudkitty-dashboard-distgit-core
+c500ad3aaa4b1ce4e572f324b129647dfbb68e21        	openstack/cloudkitty-dashboard-distgit-ptl
+global:Registered-Users		Registered Users
