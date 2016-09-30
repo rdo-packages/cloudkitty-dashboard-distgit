@@ -7,7 +7,7 @@
 %bcond_with tests
 
 Name:         openstack-cloudkitty-ui
-Version:      0.5.1
+Version:      0.6.1
 Release:      1%{?dist}
 Summary:      The UI component for the CloudKitty service
 
@@ -78,6 +78,9 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %license LICENSE
 
 %changelog
+* Fri Sep 30 2016 Haikel Guemar <hguemar@fedoraproject.org> 0.6.1-1
+- Update to 0.6.1
+
 * Wed Sep 14 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 0.5.1-1
 - Upstream 0.5.1
 
