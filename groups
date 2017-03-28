@@ -1,5 +1,9 @@
-# UUID                                  	Group Name
-#
-866a206e921ab0a29a5cc0d2be152d061a77cffa	openstack/cloudkitty-dashboard-distgit-core
-c500ad3aaa4b1ce4e572f324b129647dfbb68e21	openstack/cloudkitty-dashboard-distgit-ptl
-global:Registered-Users                 	Registered Users
+# UUID Group Name
+global:Registered-Users	Registered Users
+4572c517702492251ad622a289176552a8acbbb2	rdo-superusers
+bc305bfceca8194d7a16badbeac4a1636ee33fac	openstack/cloudkitty-dashboard-core
+global:Anonymous-Users	Anonymous Users
+6f15170b670ff9ec34ec8f0b1a4981f64c687980	openstack/cloudkitty-dashboard-ptl
+05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
+401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Non-Interactive Users
