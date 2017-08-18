@@ -29,6 +29,7 @@ BuildRequires: gettext
 
 Requires: openstack-dashboard
 Requires: python-pbr
+Requires: python-babel
 Requires: python-cloudkittyclient
 
 %description
