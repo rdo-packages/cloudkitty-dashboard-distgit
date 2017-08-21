@@ -16,6 +16,24 @@
       "revId": "e3596af6718fd624588f210c42eedd0bb904927d",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5a9096ec",
+        "filename": "openstack-cloudkitty-ui.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-08-21T11:09:04Z",
+      "side": 1,
+      "message": "Ok, will abandon this.",
+      "parentUuid": "5a890539_7aee328d",
+      "revId": "e3596af6718fd624588f210c42eedd0bb904927d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
