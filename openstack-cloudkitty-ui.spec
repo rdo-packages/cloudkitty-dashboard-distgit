@@ -7,8 +7,8 @@
 %bcond_with tests
 
 Name:         openstack-cloudkitty-ui
-Version:      XXX
-Release:      XXX
+Version:      6.0.0
+Release:      1%{?dist}
 Summary:      The UI component for the CloudKitty service
 
 License:      ASL 2.0
@@ -78,3 +78,6 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %license LICENSE
 
 %changelog
+* Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 6.0.0-1
+- Update to 6.0.0
+
