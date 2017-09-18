@@ -24,6 +24,7 @@ BuildRequires: python-sphinx
 BuildRequires: python-oslo-sphinx
 BuildRequires: git
 BuildRequires: python-cloudkittyclient
+BuildRequires: openstack-macros
 
 BuildRequires: gettext
 
@@ -43,7 +44,7 @@ Documentation files for the CloudKitty dashboard
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 # Let RPM handle the dependencies
-rm -rf {test-,}requirements.txt
+%py_req_cleanup
 
 
 %build
