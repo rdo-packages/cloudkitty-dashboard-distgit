@@ -21,7 +21,7 @@ BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
 BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx
+BuildRequires: python-openstackdocstheme
 BuildRequires: git
 BuildRequires: python-cloudkittyclient
 BuildRequires: openstack-macros
@@ -51,9 +51,9 @@ Documentation files for the CloudKitty dashboard
 # build
 %py2_build
 # Build html documentation
-sphinx-build doc/source html
+python setup.py build_sphinx -b html
 # Remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
 %py2_install
@@ -75,7 +75,7 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_[0-9]*
 
 %files doc
-%doc html
+%doc doc/build/html
 %license LICENSE
 
 %changelog
