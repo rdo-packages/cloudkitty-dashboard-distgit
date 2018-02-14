@@ -18,19 +18,19 @@ Source0:      https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstrea
 BuildArch:     noarch
 
 BuildRequires: python2-devel
-BuildRequires: python-setuptools
-BuildRequires: python-pbr
-BuildRequires: python-sphinx
-BuildRequires: python-openstackdocstheme
+BuildRequires: python2-setuptools
+BuildRequires: python2-pbr
+BuildRequires: python2-sphinx
+BuildRequires: python2-openstackdocstheme
 BuildRequires: git
-BuildRequires: python-cloudkittyclient
+BuildRequires: python2-cloudkittyclient
 BuildRequires: openstack-macros
 
 BuildRequires: gettext
 
 Requires: openstack-dashboard
-Requires: python-pbr
-Requires: python-cloudkittyclient
+Requires: python2-pbr
+Requires: python2-cloudkittyclient >= 0.5.0
 
 %description
 openstack-cloudkitty-ui is a dashboard for CloudKitty
