@@ -51,7 +51,7 @@ Documentation files for the CloudKitty dashboard
 # build
 %py2_build
 # Build html documentation
-python setup.py build_sphinx -b html
+sphinx-build -W -b html doc/source doc/build/html
 # Remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
