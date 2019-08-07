@@ -13,6 +13,7 @@
 
 %global pypi_name cloudkitty-dashboard
 %global mod_name cloudkittydashboard
+%global with_doc 1
 
 # tests are disabled by default
 %bcond_with tests
@@ -31,8 +32,6 @@ BuildArch:     noarch
 BuildRequires: python%{pyver}-devel
 BuildRequires: python%{pyver}-setuptools
 BuildRequires: python%{pyver}-pbr
-BuildRequires: python%{pyver}-sphinx
-BuildRequires: python%{pyver}-openstackdocstheme
 BuildRequires: git
 BuildRequires: python%{pyver}-cloudkittyclient
 BuildRequires: openstack-macros
@@ -46,10 +45,16 @@ Requires: python%{pyver}-cloudkittyclient >= 0.5.0
 %description
 openstack-cloudkitty-ui is a dashboard for CloudKitty
 
+%if 0%{?with_doc}
 %package doc
 Summary: Documentation for the CloudKitty dashboard
+
+BuildRequires: python%{pyver}-openstackdocstheme
+BuildRequires: python%{pyver}-sphinx
+
 %description doc
 Documentation files for the CloudKitty dashboard
+%endif
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
@@ -61,10 +66,13 @@ Documentation files for the CloudKitty dashboard
 %build
 # build
 %{pyver_build}
+
+%if 0%{?with_doc}
 # Build html documentation
 sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 # Remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 %install
 %{pyver_install}
@@ -85,8 +93,10 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %{pyver_sitelib}/*.egg-info
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_[0-9]*
 
+%if 0%{?with_doc}
 %files doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog
