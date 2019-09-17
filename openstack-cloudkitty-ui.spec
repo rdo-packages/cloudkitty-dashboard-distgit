@@ -51,6 +51,7 @@ Summary: Documentation for the CloudKitty dashboard
 
 BuildRequires: python%{pyver}-openstackdocstheme
 BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-sphinxcontrib-rsvgconverter
 
 %description doc
 Documentation files for the CloudKitty dashboard
