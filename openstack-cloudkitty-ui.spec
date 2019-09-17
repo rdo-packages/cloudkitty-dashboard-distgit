@@ -100,3 +100,4 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/cloudkitty-dashboard/commit/?id=45c962d72bdccdc2181afe3e49a42c4e980d5da5
