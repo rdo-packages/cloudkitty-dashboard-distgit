@@ -35,12 +35,27 @@ BuildRequires: python%{pyver}-pbr
 BuildRequires: git
 BuildRequires: python%{pyver}-cloudkittyclient
 BuildRequires: openstack-macros
-
 BuildRequires: gettext
+# Handle python2 exception
+%if %{pyver} == 2
+BuildRequires: python-XStatic-D3
+BuildRequires: python-XStatic-Rickshaw
+%else
+BuildRequires: python%{pyver}-D3
+BuildRequires: python%{pyver}-XStatic-Rickshaw
+%endif
 
 Requires: openstack-dashboard
 Requires: python%{pyver}-pbr
 Requires: python%{pyver}-cloudkittyclient >= 0.5.0
+# Handle python2 exception
+%if %{pyver} == 2
+Requires: python-XStatic-D3
+Requires: python-XStatic-Rickshaw
+%else
+Requires: python%{pyver}-D3
+Requires: python%{pyver}-XStatic-Rickshaw
+%endif
 
 %description
 openstack-cloudkitty-ui is a dashboard for CloudKitty
