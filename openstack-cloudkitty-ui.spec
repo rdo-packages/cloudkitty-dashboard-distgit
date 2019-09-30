@@ -1,3 +1,4 @@
+%global milestone .0rc1
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
 %global pyver %{python3_pkgversion}
@@ -19,13 +20,17 @@
 %bcond_with tests
 
 Name:         openstack-cloudkitty-ui
-Version:      XXX
-Release:      XXX
+Version:      9.0.0
+Release:      0.1%{?milestone}%{?dist}
 Summary:      The UI component for the CloudKitty service
 
 License:      ASL 2.0
 URL:          https://github.com/openstack/%{pypi_name}
 Source0:      https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+
+#
+# patches_base=9.0.0.0rc1
+#
 
 BuildArch:     noarch
 
@@ -107,3 +112,6 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %endif
 
 %changelog
+* Mon Sep 30 2019 RDO <dev@lists.rdoproject.org> 9.0.0-0.1.0rc1
+- Update to 9.0.0.0rc1
+
