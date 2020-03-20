@@ -7,7 +7,7 @@
 %bcond_with tests
 
 Name:         openstack-cloudkitty-ui
-Version:      8.0.0
+Version:      8.0.1
 Release:      1%{?dist}
 Summary:      The UI component for the CloudKitty service
 
@@ -79,6 +79,9 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %license LICENSE
 
 %changelog
+* Fri Mar 20 2020 RDO <dev@lists.rdoproject.org> 8.0.1-1
+- Update to 8.0.1
+
 * Wed Aug 22 2018 RDO <dev@lists.rdoproject.org> 8.0.0-1
 - Update to 8.0.0
 
