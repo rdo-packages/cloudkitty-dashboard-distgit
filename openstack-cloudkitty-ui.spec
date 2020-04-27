@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global pypi_name cloudkitty-dashboard
@@ -29,24 +18,19 @@ Source0:      https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstrea
 
 BuildArch:     noarch
 
-BuildRequires: python%{pyver}-devel
-BuildRequires: python%{pyver}-setuptools
-BuildRequires: python%{pyver}-pbr
+BuildRequires: python3-devel
+BuildRequires: python3-setuptools
+BuildRequires: python3-pbr
 BuildRequires: git
-BuildRequires: python%{pyver}-cloudkittyclient
+BuildRequires: python3-cloudkittyclient
 BuildRequires: openstack-macros
 BuildRequires: gettext
 
 Requires: openstack-dashboard
-Requires: python%{pyver}-pbr
-Requires: python%{pyver}-cloudkittyclient >= 0.5.0
-Requires: python%{pyver}-XStatic-D3
-# Handle python2 exception
-%if %{pyver} == 2
-Requires: python-XStatic-Rickshaw
-%else
-Requires: python%{pyver}-XStatic-Rickshaw
-%endif
+Requires: python3-pbr
+Requires: python3-cloudkittyclient >= 0.5.0
+Requires: python3-XStatic-D3
+Requires: python3-XStatic-Rickshaw
 
 %description
 openstack-cloudkitty-ui is a dashboard for CloudKitty
@@ -55,9 +39,9 @@ openstack-cloudkitty-ui is a dashboard for CloudKitty
 %package doc
 Summary: Documentation for the CloudKitty dashboard
 
-BuildRequires: python%{pyver}-openstackdocstheme
-BuildRequires: python%{pyver}-sphinx
-BuildRequires: python%{pyver}-sphinxcontrib-rsvgconverter
+BuildRequires: python3-openstackdocstheme
+BuildRequires: python3-sphinx
+BuildRequires: python3-sphinxcontrib-rsvgconverter
 
 %description doc
 Documentation files for the CloudKitty dashboard
@@ -72,17 +56,17 @@ Documentation files for the CloudKitty dashboard
 
 %build
 # build
-%{pyver_build}
+%{py3_build}
 
 %if 0%{?with_doc}
 # Build html documentation
-sphinx-build-%{pyver} -W -b html doc/source doc/build/html
-# Remove the sphinx-build-%{pyver} leftovers
+sphinx-build -W -b html doc/source doc/build/html
+# Remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{pyver_install}
+%{py3_install}
 
 # Move config to horizon
 mkdir -p %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/
@@ -90,14 +74,14 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 
 %check
 %if 0%{?with_test}
-%{pyver_bin} setup.py test
+%{__python3} setup.py test
 %endif
 
 %files
 %doc README.rst
 %license LICENSE
-%{pyver_sitelib}/%{mod_name}
-%{pyver_sitelib}/*.egg-info
+%{python3_sitelib}/%{mod_name}
+%{python3_sitelib}/*.egg-info
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_[0-9]*
 
 %if 0%{?with_doc}
