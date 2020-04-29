@@ -1,3 +1,4 @@
+%global milestone .0rc1
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global pypi_name cloudkitty-dashboard
@@ -8,13 +9,17 @@
 %bcond_with tests
 
 Name:         openstack-cloudkitty-ui
-Version:      XXX
-Release:      XXX
+Version:      10.0.0
+Release:      0.1%{?milestone}%{?dist}
 Summary:      The UI component for the CloudKitty service
 
 License:      ASL 2.0
 URL:          https://github.com/openstack/%{pypi_name}
 Source0:      https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+
+#
+# patches_base=10.0.0.0rc1
+#
 
 BuildArch:     noarch
 
@@ -91,3 +96,6 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %endif
 
 %changelog
+* Wed Apr 29 2020 RDO <dev@lists.rdoproject.org> 10.0.0-0.1.0rc1
+- Update to 10.0.0.0rc1
+
