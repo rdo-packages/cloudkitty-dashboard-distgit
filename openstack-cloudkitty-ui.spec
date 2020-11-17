@@ -33,7 +33,7 @@ BuildRequires:  /usr/bin/gpgv2
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
-BuildRequires: git
+BuildRequires: git-core
 BuildRequires: python3-cloudkittyclient
 BuildRequires: openstack-macros
 BuildRequires: gettext
