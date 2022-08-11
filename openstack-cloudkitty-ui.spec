@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
+%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global pypi_name cloudkitty-dashboard
@@ -10,7 +10,7 @@
 %bcond_with tests
 
 Name:         openstack-cloudkitty-ui
-Version:      14.0.0
+Version:      14.0.1
 Release:      1%{?dist}
 Summary:      The UI component for the CloudKitty service
 
@@ -109,6 +109,9 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %endif
 
 %changelog
+* Thu Aug 11 2022 RDO <dev@lists.rdoproject.org> 14.0.1-1
+- Update to 14.0.1
+
 * Wed Mar 30 2022 RDO <dev@lists.rdoproject.org> 14.0.0-1
 - Update to 14.0.0
 
