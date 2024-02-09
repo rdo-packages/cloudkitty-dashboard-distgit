@@ -118,3 +118,4 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 * Wed Mar 23 2022 RDO <dev@lists.rdoproject.org> 14.0.0-0.1.0rc1
 - Update to 14.0.0.0rc1
 
+
