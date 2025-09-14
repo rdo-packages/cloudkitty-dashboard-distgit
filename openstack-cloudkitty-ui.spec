@@ -105,7 +105,7 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 # Move config to horizon
 mkdir -p %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/
-install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/
+install -p -D -m 644 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/
 
 %check
 %if 0%{?with_test}
