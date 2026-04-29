@@ -134,3 +134,4 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 * Tue Mar 18 2025 RDO <dev@lists.rdoproject.org> 20.0.0-0.1.0rc1
 - Update to 20.0.0.0rc1
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/cloudkitty-dashboard/commit/77f0953d613f5b2fc0474f9ca17d03c76d3330f3
