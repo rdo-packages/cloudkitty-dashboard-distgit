@@ -18,7 +18,7 @@
 %bcond_with tests
 
 Name:         openstack-cloudkitty-ui
-Version:      20.0.0
+Version:      20.0.1
 Release:      1%{?dist}
 Summary:      The UI component for the CloudKitty service
 
@@ -128,6 +128,9 @@ install -p -D -m 640 %{mod_name}/enabled/_[0-9]* %{buildroot}%{_datadir}/opensta
 %endif
 
 %changelog
+* Mon Jul 20 2026 RDO <dev@lists.rdoproject.org> 20.0.1-1
+- Update to 20.0.1
+
 * Wed Apr 02 2025 RDO <dev@lists.rdoproject.org> 20.0.0-1
 - Update to 20.0.0
 
